@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 f57a5168513ff6431cf6bd2cf385261b69d72040 Claude <noreply@anthropic.com> 1792955675 +0000	commit (initial): NeuralOS: CPU scheduling simulator with an RL scheduler
-f57a5168513ff6431cf6bd2cf385261b69d72040 74f7b06fc368f54b3c158f7cb99d42849df016d8 Claude <noreply@anthropic.com> 1792955680 +0000	commit: Ignore TypeScript build info
-74f7b06fc368f54b3c158f7cb99d42849df016d8 88c2c46516974be7e20e408f77459976117dff67 Claude <noreply@anthropic.com> 1792956531 +0000	commit: Add benchmark results, paired analysis and reward ablation
-88c2c46516974be7e20e408f77459976117dff67 bc2bf362af42a5d763c3be4b664b5bbfdc0ba391 Aayush Upadhyay <aayushupadhyay9000@gmail.com> 1792961084 +0530	commit: Harden ignore rules and setup scripts
