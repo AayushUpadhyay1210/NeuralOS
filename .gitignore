@@ -38,3 +38,7 @@ Thumbs.db
 # Python build artifacts
 build/
 dist/
+
+.git-old/
+# Old Git history backup
+.git-old/
