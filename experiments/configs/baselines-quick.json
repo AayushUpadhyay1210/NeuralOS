@@ -1,0 +1,9 @@
+{
+  "name": "baselines-quick",
+  "kinds": ["cpu_bound", "io_bound", "bursty", "mixed"],
+  "seeds": [10000000, 10000001, 10000002],
+  "n_processes": 20,
+  "context_switch": 1,
+  "rr_quantum": 4,
+  "schedulers": ["fcfs", "sjf", "srtf", "rr", "priority"]
+}

@@ -1,0 +1,294 @@
+{
+ "id": "1ce0a4b9864f",
+ "created_at": "2026-10-25T18:42:08",
+ "workload": {
+  "config": null,
+  "processes": [
+   {
+    "pid": 1,
+    "arrival": 0,
+    "bursts": [
+     2,
+     3,
+     2
+    ],
+    "priority": 0,
+    "total_cpu": 4,
+    "total_io": 3
+   },
+   {
+    "pid": 2,
+    "arrival": 0,
+    "bursts": [
+     4
+    ],
+    "priority": 0,
+    "total_cpu": 4,
+    "total_io": 0
+   },
+   {
+    "pid": 3,
+    "arrival": 9,
+    "bursts": [
+     1
+    ],
+    "priority": 0,
+    "total_cpu": 1,
+    "total_io": 0
+   }
+  ],
+  "summary": {
+   "n_processes": 3,
+   "total_cpu": 9,
+   "total_io": 3,
+   "mean_cpu_burst": 2.25,
+   "max_cpu_burst": 4,
+   "io_processes": 1,
+   "arrival_span": 9,
+   "offered_load": 1.0
+  }
+ },
+ "request": {
+  "workload": {
+   "generate": null,
+   "processes": [
+    {
+     "pid": 1,
+     "arrival": 0,
+     "bursts": [
+      2,
+      3,
+      2
+     ],
+     "priority": 0
+    },
+    {
+     "pid": 2,
+     "arrival": 0,
+     "bursts": [
+      4
+     ],
+     "priority": 0
+    },
+    {
+     "pid": 3,
+     "arrival": 9,
+     "bursts": [
+      1
+     ],
+     "priority": 0
+    }
+   ]
+  },
+  "scheduler": {
+   "name": "fcfs",
+   "quantum": 4,
+   "aging": null,
+   "seed": 0,
+   "model_id": null,
+   "checkpoint": "best"
+  },
+  "context_switch": 1,
+  "starvation_threshold": null
+ },
+ "scheduler": {
+  "name": "fcfs",
+  "preemptive": false
+ },
+ "config": {
+  "context_switch": 1,
+  "max_time": 5000000,
+  "starvation_threshold": null
+ },
+ "metrics": {
+  "n_processes": 3,
+  "makespan": 12,
+  "avg_waiting": 2.6666666666666665,
+  "std_waiting": 0.4714045207910317,
+  "avg_turnaround": 6.666666666666667,
+  "std_turnaround": 2.8674417556808756,
+  "avg_response": 1.6666666666666667,
+  "std_response": 1.247219128924647,
+  "p95_turnaround": 9.7,
+  "throughput": 25.0,
+  "cpu_utilization": 0.75,
+  "context_switches": 3,
+  "switch_overhead": 3,
+  "idle_time": 0,
+  "starvation_threshold": 22,
+  "starvation_count": 0,
+  "max_wait": 3,
+  "avg_slowdown": 2.0595238095238098,
+  "max_slowdown": 3.0,
+  "jain_fairness": 0.9022640258056737
+ },
+ "processes": [
+  {
+   "pid": 1,
+   "arrival": 0,
+   "priority": 0,
+   "total_cpu": 4,
+   "total_io": 3,
+   "cpu_bursts": 2,
+   "start": 0,
+   "completion": 10,
+   "waiting": 3,
+   "turnaround": 10,
+   "response": 0,
+   "max_wait": 3,
+   "slowdown": 1.4285714285714286,
+   "dispatches": 2
+  },
+  {
+   "pid": 2,
+   "arrival": 0,
+   "priority": 0,
+   "total_cpu": 4,
+   "total_io": 0,
+   "cpu_bursts": 1,
+   "start": 3,
+   "completion": 7,
+   "waiting": 3,
+   "turnaround": 7,
+   "response": 3,
+   "max_wait": 3,
+   "slowdown": 1.75,
+   "dispatches": 1
+  },
+  {
+   "pid": 3,
+   "arrival": 9,
+   "priority": 0,
+   "total_cpu": 1,
+   "total_io": 0,
+   "cpu_bursts": 1,
+   "start": 11,
+   "completion": 12,
+   "waiting": 2,
+   "turnaround": 3,
+   "response": 2,
+   "max_wait": 2,
+   "slowdown": 3.0,
+   "dispatches": 1
+  }
+ ],
+ "timeline": [
+  {
+   "start": 0,
+   "end": 2,
+   "kind": "run",
+   "pid": 1
+  },
+  {
+   "start": 2,
+   "end": 3,
+   "kind": "switch",
+   "pid": 2
+  },
+  {
+   "start": 3,
+   "end": 7,
+   "kind": "run",
+   "pid": 2
+  },
+  {
+   "start": 7,
+   "end": 8,
+   "kind": "switch",
+   "pid": 1
+  },
+  {
+   "start": 8,
+   "end": 10,
+   "kind": "run",
+   "pid": 1
+  },
+  {
+   "start": 10,
+   "end": 11,
+   "kind": "switch",
+   "pid": 3
+  },
+  {
+   "start": 11,
+   "end": 12,
+   "kind": "run",
+   "pid": 3
+  }
+ ],
+ "transitions": [
+  {
+   "time": 0,
+   "pid": 1,
+   "from": "NEW",
+   "to": "READY"
+  },
+  {
+   "time": 0,
+   "pid": 2,
+   "from": "NEW",
+   "to": "READY"
+  },
+  {
+   "time": 0,
+   "pid": 1,
+   "from": "READY",
+   "to": "RUNNING"
+  },
+  {
+   "time": 2,
+   "pid": 1,
+   "from": "RUNNING",
+   "to": "BLOCKED"
+  },
+  {
+   "time": 3,
+   "pid": 2,
+   "from": "READY",
+   "to": "RUNNING"
+  },
+  {
+   "time": 5,
+   "pid": 1,
+   "from": "BLOCKED",
+   "to": "READY"
+  },
+  {
+   "time": 7,
+   "pid": 2,
+   "from": "RUNNING",
+   "to": "TERMINATED"
+  },
+  {
+   "time": 8,
+   "pid": 1,
+   "from": "READY",
+   "to": "RUNNING"
+  },
+  {
+   "time": 9,
+   "pid": 3,
+   "from": "NEW",
+   "to": "READY"
+  },
+  {
+   "time": 10,
+   "pid": 1,
+   "from": "RUNNING",
+   "to": "TERMINATED"
+  },
+  {
+   "time": 11,
+   "pid": 3,
+   "from": "READY",
+   "to": "RUNNING"
+  },
+  {
+   "time": 12,
+   "pid": 3,
+   "from": "RUNNING",
+   "to": "TERMINATED"
+  }
+ ],
+ "decisions": 4
+}

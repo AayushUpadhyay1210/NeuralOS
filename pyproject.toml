@@ -1,0 +1,36 @@
+# Repository-wide tool configuration (the installable package lives in backend/).
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["backend"]
+addopts = "-q"
+markers = [
+    "rl: needs gymnasium / stable-baselines3 / torch",
+    "slow: trains a small model (tens of seconds)",
+]
+
+[tool.ruff]
+line-length = 100
+src = ["backend", "tests"]
+target-version = "py310"
+extend-exclude = ["frontend", "models", "experiments"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF012"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B017"]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["backend/neuralos"]
+strict = true
+warn_unused_ignores = false
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["neuralos.rl.*"]
+disallow_untyped_calls = false
+disallow_subclassing_any = false

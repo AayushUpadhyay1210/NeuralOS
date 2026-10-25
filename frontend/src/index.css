@@ -1,0 +1,143 @@
+@import "@fontsource-variable/archivo/wdth.css";
+@import "tailwindcss";
+
+/* Dark is the default; light is opt-in via the theme toggle or OS setting. */
+:root {
+  color-scheme: dark;
+  --ground: #121a22;
+  --panel: #18222d;
+  --panel-2: #1e2a37;
+  --rule: #2a3644;
+  --ink: #e6ebf0;
+  --ink-2: #a9b4c0;
+  --ink-3: #75828f;
+  --run: #3987e5;
+  --run-soft: rgba(57, 135, 229, 0.18);
+  --switch: #d95926;
+  --agent: #a48cf0;
+  --agent-soft: rgba(164, 140, 240, 0.16);
+  --wait: rgba(169, 180, 192, 0.16);
+  --good: #3fa36b;
+  --warn: #d9a226;
+  --bad: #e05c5c;
+  --focus: #8fc1ff;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground: #f2f4f7;
+  --panel: #ffffff;
+  --panel-2: #eef1f5;
+  --rule: #d5dbe3;
+  --ink: #18222d;
+  --ink-2: #4a5765;
+  --ink-3: #6b7785;
+  --run: #2a78d6;
+  --run-soft: rgba(42, 120, 214, 0.14);
+  --switch: #c94f1c;
+  --agent: #6f55d6;
+  --agent-soft: rgba(111, 85, 214, 0.12);
+  --wait: rgba(74, 87, 101, 0.13);
+  --good: #23824f;
+  --warn: #9c7300;
+  --bad: #c03c3c;
+  --focus: #2a78d6;
+}
+
+@theme {
+  --font-sans: "Archivo Variable", "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --color-ground: var(--ground);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-rule: var(--rule);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-run: var(--run);
+  --color-switch: var(--switch);
+  --color-agent: var(--agent);
+  --color-good: var(--good);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+}
+
+html,
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings carry the identity: semi-expanded Archivo, tight tracking. */
+h1,
+h2,
+h3 {
+  font-stretch: 118%;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.prose-lab p,
+.prose-lab li {
+  max-width: 72ch;
+  color: var(--ink-2);
+}
+.prose-lab p + p {
+  margin-top: 0.75rem;
+}
+.prose-lab h2 {
+  margin: 2.25rem 0 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+.prose-lab h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.prose-lab ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+.prose-lab code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  background: var(--panel-2);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.prose-lab pre {
+  background: var(--panel-2);
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  max-width: 80ch;
+}
+.prose-lab pre code {
+  background: none;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

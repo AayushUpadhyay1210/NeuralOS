@@ -1,0 +1,9 @@
+# Reinforcement learning. CPU is enough; no GPU needed.
+# Verified with torch 2.14.1, gymnasium 1.4.0, stable-baselines3 2.9.0, sb3-contrib 2.9.0.
+# On Linux, install the smaller CPU-only torch first to avoid ~3 GB of CUDA libraries:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# On Windows and macOS the default PyPI torch wheel is already CPU-only.
+torch>=2.2
+gymnasium>=1.0
+stable-baselines3>=2.4
+sb3-contrib>=2.4

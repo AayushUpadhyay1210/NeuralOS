@@ -1,0 +1,5 @@
+# Core: simulator, baselines, benchmarks and API (no ML). Versions verified 2026-10-25.
+numpy>=1.26,<3
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6,<3

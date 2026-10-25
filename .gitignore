@@ -1,0 +1,40 @@
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Generated artifacts: trained checkpoints and benchmark outputs are reproducible
+# from the commands in README.md, so they stay out of version control.
+models/*
+!models/README.md
+experiments/results/*
+!experiments/results/.gitkeep
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Private keys and certificates
+*.pem
+*.key
+
+# Python build artifacts
+build/
+dist/
